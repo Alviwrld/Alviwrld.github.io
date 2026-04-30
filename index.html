@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alvaro Gaytan Cruz | Excel Projects</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 85px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    header h2 {
+      font-size: 1.35rem;
+      font-weight: normal;
+      color: #dbeafe;
+      margin-bottom: 18px;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      background: white;
+      color: #1d4ed8;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 28px;
+      color: #111827;
+    }
+
+    .intro-box {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .intro-box p {
+      font-size: 1.05rem;
+      margin-bottom: 15px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      border-top: 5px solid #2563eb;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card h3 {
+      color: #1d4ed8;
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .project-card p {
+      margin-bottom: 16px;
+    }
+
+    .project-card ul {
+      margin-left: 20px;
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: #1d4ed8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: #111827;
+      color: white;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-box a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #020617;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.25rem;
+      }
+
+      header h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alvaro Gaytan Cruz</h1>
+    <h2>Excel Project Portfolio</h2>
+    <p>
+      A simple website showcasing the Excel projects I am currently working on, including dashboards,
+      financial trackers, reports, and data analysis tools.
+    </p>
+    <a href="#projects" class="btn">View Projects</a>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">What This Website Is For</h2>
+    <div class="intro-box">
+      <p>
+        This portfolio is focused on my Excel work. I am using this space to show the projects I am building,
+        what each project does, and how Excel can be used to organize data, track performance, and support better decisions.
+      </p>
+      <p>
+        As I complete more Excel projects, I can add screenshots, downloadable files, and short explanations for each one.
+      </p>
+      <div class="skills">
+        <span class="skill">Excel Dashboards</span>
+        <span class="skill">Data Analysis</span>
+        <span class="skill">Financial Tracking</span>
+        <span class="skill">Charts</span>
+        <span class="skill">Reports</span>
+        <span class="skill">Budgeting</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">My Excel Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Sales Dashboard</h3>
+        <p>
+          A dashboard that tracks sales performance and makes it easier to understand trends over time.
+        </p>
+        <ul>
+          <li>Sales totals</li>
+          <li>Monthly trends</li>
+          <li>Charts and summaries</li>
+        </ul>
+        <a href="#" class="project-link">Project coming soon</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Budget Tracker</h3>
+        <p>
+          A spreadsheet used to organize income, expenses, and spending categories in one place.
+        </p>
+        <ul>
+          <li>Income tracking</li>
+          <li>Expense categories</li>
+          <li>Budget vs. actual results</li>
+        </ul>
+        <a href="#" class="project-link">Project coming soon</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Financial Report</h3>
+        <p>
+          A report layout that summarizes financial information clearly using tables, formulas, and charts.
+        </p>
+        <ul>
+          <li>Revenue summary</li>
+          <li>Cost breakdown</li>
+          <li>Key takeaways</li>
+        </ul>
+        <a href="#" class="project-link">Project coming soon</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Data Cleaning Project</h3>
+        <p>
+          A project showing how messy data can be cleaned, organized, and prepared for analysis in Excel.
+        </p>
+        <ul>
+          <li>Organized raw data</li>
+          <li>Removed errors</li>
+          <li>Created useful summaries</li>
+        </ul>
+        <a href="#" class="project-link">Project coming soon</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2>Connect With Me</h2>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/alvarogaytancruz/" target="_blank">linkedin.com/in/alvarogaytancruz</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Alvaro Gaytan Cruz. Excel Project Portfolio.</p>
+  </footer>
+</body>
+</html>
