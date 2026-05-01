@@ -1,136 +1,213 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alvaro Gaytan | Passion Project </title>
+  <title>Alvaro Gaytan | Passion Project</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #f5f7fb;
-      color: #1f2937;
+      background: #f6f8fc;
+      color: #0f172a;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 88vh;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(59, 130, 246, 0.35), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.22), transparent 28%),
+        linear-gradient(135deg, #020617 0%, #0f172a 48%, #1d4ed8 100%);
       color: white;
-      padding: 85px 20px;
-      text-align: center;
+      padding: 26px 7%;
+      position: relative;
+      overflow: hidden;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 12px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -170px;
+      bottom: -190px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      filter: blur(2px);
     }
 
-    header h2 {
-      font-size: 1.35rem;
-      font-weight: normal;
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
       color: #dbeafe;
-      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 0.95rem;
     }
 
-    header p {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      font-size: 1.1rem;
+    .nav-links a {
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 125px auto 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #bfdbfe;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      max-width: 740px;
+      margin: 0 auto 34px;
+      color: #dbeafe;
+      font-size: 1.25rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 14px 24px;
+      border-radius: 14px;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
       background: white;
       color: #1d4ed8;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+    }
+
+    .btn-secondary {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     section {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: auto;
-      padding: 55px 20px;
+      padding: 70px 22px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 28px;
-      color: #111827;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #0f172a;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto 34px;
+      text-align: center;
+      color: #475569;
+      font-size: 1.05rem;
     }
 
     .intro-box {
-      background: white;
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 36px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
       text-align: center;
     }
 
     .intro-box p {
-      font-size: 1.05rem;
-      margin-bottom: 15px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .project-card {
-      background: white;
-      padding: 26px;
-      border-radius: 16px;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
-      border-top: 5px solid #2563eb;
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .project-card h3 {
-      color: #1d4ed8;
-      margin-bottom: 12px;
-      font-size: 1.35rem;
-    }
-
-    .project-card p {
+      font-size: 1.08rem;
       margin-bottom: 16px;
-    }
-
-    .project-card ul {
-      margin-left: 20px;
-      margin-bottom: 18px;
-    }
-
-    .project-link {
-      display: inline-block;
-      color: #1d4ed8;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
+      color: #334155;
     }
 
     .skills {
@@ -138,71 +215,207 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 24px;
     }
 
     .skill {
-      background: #dbeafe;
-      color: #1e40af;
-      padding: 9px 14px;
+      background: #e0ecff;
+      color: #1d4ed8;
+      padding: 10px 15px;
       border-radius: 999px;
-      font-weight: bold;
+      font-weight: 800;
       font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 28px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+      transition: 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #1d4ed8, #38bdf8);
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, 0.13);
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .project-card h3 {
+      color: #0f172a;
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+      color: #475569;
+    }
+
+    .project-card ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: #334155;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: #1d4ed8;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
     }
 
     .contact-box {
       text-align: center;
-      background: #111827;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.28), transparent 30%),
+        linear-gradient(135deg, #020617, #111827);
       color: white;
-      border-radius: 16px;
-      padding: 35px;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+    }
+
+    .contact-box h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      margin-top: 8px;
+      color: #dbeafe;
     }
 
     .contact-box a {
       color: #93c5fd;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
     }
 
     footer {
       background: #020617;
-      color: white;
+      color: #cbd5e1;
       text-align: center;
       padding: 22px;
       margin-top: 30px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.25rem;
+    @media (max-width: 700px) {
+      .hero {
+        min-height: 78vh;
+        padding: 22px 6%;
       }
 
-      header h2 {
-        font-size: 1.1rem;
+      .navbar {
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.86rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .hero-content {
+        margin-top: 92px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .hero-text {
+        font-size: 1.05rem;
+      }
+
+      .intro-box,
+      .contact-box,
+      .project-card {
+        padding: 25px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Alvaro Gaytan </h1>
-    <h2>Passion Project Portfolio</h2>
-    <p>
-      Welcome! 
-    </p>
-    <a href="#projects" class="btn">View Projects</a>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">
+        <div class="logo-mark">AG</div>
+        <span>Alvaro Gaytan</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/alvarogaytancruz/" target="_blank">LinkedIn</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">Finance Student @ CSUF • Excel • Data Analysis</p>
+      <h1>Passion projects built with finance and data.</h1>
+      <p class="hero-text">
+        I build Excel-based tools that analyze pricing, compare costs, and turn everyday financial questions into clear insights.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#about" class="btn btn-secondary">About This Portfolio</a>
+      </div>
+    </div>
   </header>
 
   <section id="about">
-    <h2 class="section-title">What This Website Is For?!</h2>
+    <h2 class="section-title">What This Website Is For</h2>
+    <p class="section-subtitle">
+      A clean space to show the projects I am building right now and explain the purpose behind each one.
+    </p>
     <div class="intro-box">
       <p>
-        I am a finance student @ CSUF focused on developing data-driven tools that analyze pricing, optimize costs, and evaluate investment opportunities. My work combines Excel-based modeling with real-world applications, including market arbitrage, consumer savings analysis, and long-term financial planning.
+        I am a finance student at CSUF focused on developing data-driven tools that analyze pricing, optimize costs, and evaluate investment opportunities. My work combines Excel-based modeling with real-world applications, including market arbitrage, consumer savings analysis, and long-term financial planning.
       </p>
-      <p><strong>Built using:</strong> Excel, HTML/CSS, and basic data analysis techniques</p>
+      <p><strong>Built using:</strong> Excel, HTML/CSS, and basic data analysis techniques.</p>
       <p>
-        As I complete more Excel projects, I can add screenshots, downloadable files, and a explanations for each one.
+        As I complete more projects, I can add screenshots, downloadable files, and short explanations for each one.
       </p>
       <div class="skills">
         <span class="skill">Excel Dashboards</span>
@@ -217,58 +430,65 @@
 
   <section id="projects">
     <h2 class="section-title">My Passion Projects</h2>
+    <p class="section-subtitle">
+      These are current project ideas I am developing to practice financial modeling, data analysis, and practical problem solving.
+    </p>
+
     <div class="projects-grid">
       <div class="project-card">
+        <span class="project-tag">Excel ROI Model</span>
         <h3>Steam Marketplace Arbitrage Model</h3>
         <p>
-          An Excel-Based ROI tracker that analyzes profits from buying skins on third-party websites and reselling them on the Steam Marketplace at a higher price.
+          An Excel-based ROI tracker that analyzes potential profit from buying skins on third-party websites and reselling them on the Steam Marketplace.
         </p>
         <ul>
-          <li>Sales total</li>
-          <li>Sale trends</li>
-          <li>Charts and summaries</li>
+          <li>Purchase cost tracking</li>
+          <li>Expected resale value</li>
+          <li>ROI and profit summaries</li>
         </ul>
-        <a href="#" class="project-link">Project coming soon</a>
+        <a href="#" class="project-link">Project coming soon →</a>
       </div>
 
       <div class="project-card">
+        <span class="project-tag">Consumer Savings Tool</span>
         <h3>Grocery Price Optimization Model</h3>
         <p>
-         An AI-powered grocery price comparison tool that uses an API to search local grocery stores,
-    compare item prices, and recommend the cheapest options near the user.
+          An AI-powered grocery price comparison concept that searches local grocery stores, compares item prices, and recommends cheaper options.
         </p>
         <ul>
-          <li>AI-powered grocery search</li>
-          <li>Local store price comparison</li>
+          <li>Local price comparison</li>
           <li>Cheapest item recommendations</li>
+          <li>Potential API structure</li>
         </ul>
-        <a href="#" class="project-link">Project coming soon</a>
+        <a href="#" class="project-link">Project coming soon →</a>
       </div>
 
       <div class="project-card">
+        <span class="project-tag">Investment Calculator</span>
         <h3>401(k) Growth Calculator</h3>
         <p>
-          An Excel-based investment calculator that projects 401(k) growth over time using contributions, interest rates, and compounding to estimate long-term retirement savings.
+          An Excel-based investment calculator that projects 401(k) growth using contributions, rates of return, and compounding over time.
         </p>
         <ul>
           <li>Annual contribution tracking</li>
           <li>Compound growth calculation</li>
-          <li>Retirement savings estimation</li>
+          <li>Retirement savings estimate</li>
         </ul>
-        <a href="#" class="project-link">Project coming soon</a>
+        <a href="#" class="project-link">Project coming soon →</a>
       </div>
- </section>
+    </div>
+  </section>
 
   <section id="contact">
     <div class="contact-box">
       <h2>Connect With Me</h2>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/alvarogaytancruz/" target="_blank">linkedin.com/in/alvarogaytancruz</a></p>
-      <P>Email:Alvarokaita@gmail.com</P>
+      <p>Email: <a href="mailto:Alvarokaita@gmail.com">Alvarokaita@gmail.com</a></p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 Alvaro Gaytan Cruz. Excel Project Portfolio.</p>
+    <p>&copy; 2026 Alvaro Gaytan Cruz. Passion Project Portfolio.</p>
   </footer>
 </body>
 </html>
